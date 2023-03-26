@@ -6,13 +6,13 @@
 #    By: egun <egun@student.42istanbul.com.tr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/15 21:53:05 by shovsepy          #+#    #+#              #
-#    Updated: 2023/03/26 17:37:41 by egun             ###   ########.fr        #
+#    Updated: 2023/03/26 21:21:00 by egun             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = phonebook
+NAME = Zombie
 
-SRCS = Contact.cpp PhoneBook.cpp main.cpp
+SRCS = Zombie.cpp zombieHorde.cpp main.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 CC = c++
@@ -26,7 +26,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CC) $(OBJS) $(CFLAGS) -o $(NAME)
 
-run: all
+run: all clean
 	@./$(NAME)
 
 clean:
