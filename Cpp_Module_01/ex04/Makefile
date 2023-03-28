@@ -6,13 +6,13 @@
 #    By: erengun <erengun@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/15 21:53:05 by shovsepy          #+#    #+#              #
-#    Updated: 2023/03/28 16:43:41 by erengun          ###   ########.fr        #
+#    Updated: 2023/03/28 17:14:44 by erengun          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Zombie
+NAME = sedv2
 
-SRCS = main.cpp
+SRCS = main.cpp SedV2.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 CC = c++
@@ -26,15 +26,19 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CC) $(OBJS) $(CFLAGS) -o $(NAME)
 
-run: all clean
-	@./$(NAME)
+test: all clean
+	$(CC) $(CFLAGS) filegenerator.cpp -o filegenerator
+	./filegenerator
+	@echo
+	@./$(NAME) "test.txt" "Hello" "Hi"
 
 clean:
 	@$(RM)  $(OBJS)
-
 fclean: clean
-	@clear
 	@$(RM) $(NAME)
+	w@$(RM) filegenerator
+	@$(RM) test.txt
+	@$(RM) test.txt.replace
 
 re: fclean all
 

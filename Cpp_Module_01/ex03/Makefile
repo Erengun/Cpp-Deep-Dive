@@ -6,13 +6,13 @@
 #    By: erengun <erengun@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/15 21:53:05 by shovsepy          #+#    #+#              #
-#    Updated: 2023/03/28 16:43:41 by erengun          ###   ########.fr        #
+#    Updated: 2023/03/28 16:45:59 by erengun          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Zombie
+NAME = attack
 
-SRCS = main.cpp
+SRCS = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 CC = c++
@@ -27,13 +27,14 @@ $(NAME): $(OBJS)
 	$(CC) $(OBJS) $(CFLAGS) -o $(NAME)
 
 run: all clean
+	@echo
 	@./$(NAME)
+	@make fclean
 
 clean:
 	@$(RM)  $(OBJS)
 
 fclean: clean
-	@clear
 	@$(RM) $(NAME)
 
 re: fclean all
