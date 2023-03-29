@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: erengun <erengun@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/01/15 21:53:05 by shovsepy          #+#    #+#              #
-#    Updated: 2023/03/28 17:14:44 by erengun          ###   ########.fr        #
+#    Created: 2022/01/15 21:53:05 by egun              #+#    #+#              #
+#    Updated: 2023/03/29 16:45:26 by erengun          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ clean:
 	@$(RM)  $(OBJS)
 fclean: clean
 	@$(RM) $(NAME)
-	w@$(RM) filegenerator
+	@$(RM) filegenerator
 	@$(RM) test.txt
 	@$(RM) test.txt.replace
 
