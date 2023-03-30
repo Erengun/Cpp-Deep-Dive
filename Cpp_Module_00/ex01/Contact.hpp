@@ -7,10 +7,10 @@
 class Contact
 {
 private:
-    std::string first_name;
-    std::string last_name;
-    std::string nickname;
-    std::string phone_number;
+    std::string _firstName;
+    std::string _lastName;
+    std::string _nickName;
+    std::string _phoneNumber;
     std::string secret;
 
 public:

@@ -2,17 +2,17 @@
 
 const std::string& Contact::getFirstName() const
 {
-	return (this->first_name);
+	return (this->_firstName);
 }
 
 const std::string& Contact::getLastName() const
 {
-	return (this->last_name);
+	return (this->_lastName);
 }
 
 const std::string& Contact::getNickname() const
 {
-	return (this->nickname);
+	return (this->_nickName);
 }
 
 const std::string& Contact::getSecret() const
@@ -22,22 +22,22 @@ const std::string& Contact::getSecret() const
 
 const std::string& Contact::getPhoneNumber() const
 {
-	return (this->phone_number);
+	return (this->_phoneNumber);
 }
 
 void Contact::setFirstName(const std::string& first_name)
 {
-	this->first_name = first_name;
+	this->_firstName = first_name;
 }
 
 void Contact::setLastName(const std::string& last_name)
 {
-	this->last_name = last_name;
+	this->_lastName = last_name;
 }
 
 void Contact::setNickname(const std::string& nickname)
 {
-	this->nickname = nickname;
+	this->_nickName = nickname;
 }
 
 void Contact::setSecret(const std::string& secret)
@@ -47,15 +47,15 @@ void Contact::setSecret(const std::string& secret)
 
 void Contact::setPhoneNumber(const std::string& phone_number)
 {
-	this->phone_number = phone_number;
+	this->_phoneNumber = phone_number;
 }
 
 Contact::Contact(const std::string& first_name, const std::string& last_name, const std::string& nickname, const std::string& phone_number, const std::string& secret)
 {
-	this->first_name = first_name;
-	this->last_name = last_name;
-	this->nickname = nickname;
-	this->phone_number = phone_number;
+	this->_firstName = first_name;
+	this->_lastName = last_name;
+	this->_nickName = nickname;
+	this->_phoneNumber = phone_number;
 	this->secret = secret;
 }
 

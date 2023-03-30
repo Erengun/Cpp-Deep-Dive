@@ -1,11 +1,14 @@
 #include "PhoneBook.hpp"
 
-void printName(const std::string &name)
+std::string divideString(const std::string &name)
 {
     if (name.length() > 10)
-        std::cout << name.substr(0, 9) << ".";
-    else
-        std::cout << std::setw(10) << name;
+    {
+        std::string new_name = name.substr(0, 9);
+        new_name += ".";
+        return new_name;
+    }
+    return name;
 }
 
 int PhoneBook::getSize() const
@@ -59,14 +62,13 @@ void PhoneBook::display_contact(int i) const
     std::cout << Color::YELLOW << "Number:" << Color::RESET << " " << this->contacts[i].getPhoneNumber() << std::endl;
     std::string darkest_secret = this->contacts[i].getSecret();
     if (darkest_secret.size() > 30)
-    { // 40 karakterden uzun darkest secret varsa alt satıra taşı
+    {
         std::cout << Color::YELLOW << "Darkest Secret:" << Color::RESET << " " << darkest_secret.substr(0, 30) << "..." << std::endl;
         std::cout << darkest_secret.substr(30) << std::endl;
     }
     else
     {
         std::cout << Color::YELLOW << "Darkest Secret:" << Color::RESET << " " << darkest_secret << std::endl;
-        // New Line
         std::cout << std::endl;
     }
 }
@@ -84,9 +86,9 @@ void PhoneBook::display_phonebook() const
         std::cout << Color::CYAN << "+---------+--------------+-------------+------------+" << Color::RESET << "\n";
         std::cout << Color::YELLOW << "|    " << i << "    |"
                   << " ";
-        std::cout << std::left << std::setw(12) << this->contacts[i].getFirstName().substr(0, 10) << " | ";
-        std::cout << std::left << std::setw(11) << this->contacts[i].getLastName().substr(0, 10) << " | ";
-        std::cout << std::left << std::setw(10) << this->contacts[i].getNickname().substr(0, 10) << " |" << Color::RESET << "\n";
+        std::cout << std::left << std::setw(12) << divideString(this->contacts[i].getFirstName()) << " | ";
+        std::cout << std::left << std::setw(11) << divideString(this->contacts[i].getLastName()) << " | ";
+        std::cout << std::left << std::setw(10) << divideString(this->contacts[i].getNickname()) << " |" << Color::RESET << "\n";
     }
     std::cout << Color::CYAN << "+---------------------------------------------------+" << Color::RESET << "\n";
 }
