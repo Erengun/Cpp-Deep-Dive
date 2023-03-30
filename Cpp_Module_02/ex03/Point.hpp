@@ -1,34 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ael-khni <ael-khni@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/22 12:58:30 by ael-khni          #+#    #+#             */
-/*   Updated: 2022/07/22 13:10:00 by ael-khni         ###   ########.fr       */
+/*   Created: 2022/07/22 22:03:31 by ael-khni          #+#    #+#             */
+/*   Updated: 2022/07/23 12:25:27 by ael-khni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-#define FIXED_HPP
+#ifndef POINT_HPP
+# define POINT_HPP
 
-#include <iostream>
+#include "Fixed.hpp"
 
-class Fixed
+class Point
 {
 private:
-    int                 _fixedPointValue;
-    static const int    _fractionalBits = 8;
+    const Fixed _x;
+    const Fixed _y;
 
 public:
-    Fixed(/* args */);
-    Fixed( const Fixed &rhs );
-    Fixed& operator=( const Fixed &rhs );
-    ~Fixed();
+    Point();
+    Point( const float x, const float y );
+    Point( const Point &src );
+    ~Point();
 
-    int     getRawBits( void ) const;
-    void    setRawBits( int const raw );
+    Point&  operator=( const Point &rhs );
+
+    Fixed getX( void ) const ;
+    Fixed getY( void ) const ;
+    
 };
 
-#endif  // FIXED_HPP
+bool bsp( Point const a, Point const b, Point const c, Point const point );
+
+
+#endif // POINT_HPP

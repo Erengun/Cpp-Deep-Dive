@@ -6,7 +6,7 @@
 #    By: erengun <erengun@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/15 21:53:05 by egun              #+#    #+#              #
-#    Updated: 2023/03/29 16:45:08 by erengun          ###   ########.fr        #
+#    Updated: 2023/03/30 16:48:34 by erengun          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,9 @@ $(NAME): $(OBJS)
 	$(CC) $(OBJS) $(CFLAGS) -o $(NAME)
 
 run: all
+	@clear
 	@./$(NAME)
+	make fclean
 
 clean:
 	@$(RM)  $(OBJS)

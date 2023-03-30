@@ -22,5 +22,6 @@ run: all
 	./$(NAME) Damnit " ! " "Sorry students, I thought this thing was off."
 	@echo
 	./$(NAME)
+	@make fclean
 
 .PHONY: all clean fclean re
