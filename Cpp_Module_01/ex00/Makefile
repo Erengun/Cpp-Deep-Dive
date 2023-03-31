@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: erengun <erengun@student.42.fr>            +#+  +:+       +#+         #
+#    By: egun <egun@student.42istanbul.com.tr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/15 21:53:05 by egun              #+#    #+#              #
-#    Updated: 2023/03/29 16:45:11 by erengun          ###   ########.fr        #
+#    Updated: 2023/03/31 15:46:17 by egun             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,14 +26,14 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CC) $(OBJS) $(CFLAGS) -o $(NAME)
 
-run: all clean
+run: all
 	@./$(NAME)
+	@make fclean
 
 clean:
 	@$(RM)  $(OBJS)
 
 fclean: clean
-	@clear
 	@$(RM) $(NAME)
 
 re: fclean all
